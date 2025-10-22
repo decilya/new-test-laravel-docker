@@ -29,7 +29,6 @@ class BookingsController extends Controller
             ], 422);
         }
 
-        // Получение гида
         $guide = Guide::find($request->guide_id);
 
         if (!$guide || !$guide->is_active) {
@@ -128,8 +127,6 @@ class BookingsController extends Controller
         }
     }
 
-    // В файле BookingsController.php
-
     public function checkDate(Request $request)
     {
         // Валидация входящих данных
@@ -138,11 +135,9 @@ class BookingsController extends Controller
             'guide_id' => 'nullable|integer|exists:guides,id'
         ]);
 
-        // Получаем дату и ID гида из запроса
         $date = $validatedData['date'];
         $guideId = $validatedData['guide_id'] ?? null;
 
-        // Проверяем занятость гида на указанную дату
         $isAvailable = true;
 
         if ($guideId) {
@@ -152,7 +147,6 @@ class BookingsController extends Controller
             // dump($isAvailable);
         }
 
-        // Возвращаем JSON ответ
         return response()->json([
             'available' => $isAvailable,
             'message' => $isAvailable ? 'Дата доступна' : 'Гид занят в этот день'
@@ -170,21 +164,6 @@ class BookingsController extends Controller
     public function destroy(Booking $booking)
     {
         try {
-            // Проверка прав доступа (если необходимо)
-            // if (!auth()->user()->can('delete', $booking)) {
-            //     return redirect()
-            //         ->back()
-            //         ->withErrors(['error' => 'У вас нет прав на удаление бронирования']);
-            // }
-
-            // Логирование удаления (опционально)
-            // ActivityLog::create([
-            //     'user_id' => auth()->id(),
-            //     'action' => 'Удаление бронирования',
-            //     'booking_id' => $booking->id
-            // ]);
-
-            // Само удаление
             $booking->delete();
 
             return redirect()

@@ -28,9 +28,6 @@ Route::put('/bookings/{booking}', [BookingsController::class, 'update'])
 
 Route::resource('guides', \App\Http\Controllers\GuidesController::class);
 
-// В файле routes/web.php
-
-// В routes/web.php
 Route::group(['prefix' => 'guides', 'as' => 'guides.'], function () {
     Route::get('/', [GuidesController::class, 'index'])->name('index');
     Route::get('/create', [GuidesController::class, 'create'])->name('create');
@@ -50,7 +47,6 @@ Route::get('/guides', [GuidesController::class, 'index'])
 Route::get('/guides/{guide}/edit', [GuidesController::class, 'edit'])
     ->name('guides.edit');
 
-// В routes/web.php
 Route::delete('/guides/{guide}', [GuidesController::class, 'destroy'])
     ->name('guides.destroy');
 

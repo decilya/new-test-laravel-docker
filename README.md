@@ -6,6 +6,11 @@
 $ make install
 ```
 
+Миграции:
+```bash
+$ docker compose exec app php artisan migrage
+```
+
 http://localhost
 
 Для запуска тестов используйте команды:
