@@ -11,7 +11,18 @@ $ make install
 $ docker compose exec app php artisan migrage
 ```
 
-http://localhost
+гиды:
+
+http://localhost/guides
+
+http://localhost/guides/create
+
+бронирование:
+
+http://localhost/bookings
+
+http://localhost/bookings/create
+
 
 Для запуска тестов используйте команды:
 
