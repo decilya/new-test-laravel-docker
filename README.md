@@ -60,3 +60,16 @@ POST /api/bookings — создание нового бронирования
 Если мы хотим перенести это в новый проект, то мы можем пойти 2мя путями:
 1) просто перенести файлы проекта в другой проект 
 2) выделить мой код в пакет, но для того нужно будет еще описать ServiceProvider и добавить потом этот провайдер в config/app.php основного приложения (в массив 'providers' => [])
+
+
+![Страница бронирования](https://github.com/decilya/new-test-laravel-docker/blob/main/src/resources/imgs/bookings/bookings.png)
+![Страница создания бронирования](https://github.com/decilya/new-test-laravel-docker/blob/main/src/resources/imgs/bookings/create_1.png)
+![Страница создания бронирования №2](https://github.com/decilya/new-test-laravel-docker/blob/main/src/resources/imgs/bookings/create_2.png)
+
+![Страница списка гидов](https://github.com/decilya/new-test-laravel-docker/blob/main/src/resources/imgs/guides/gids.png)
+![Страница редактирование гида](https://github.com/decilya/new-test-laravel-docker/blob/main/src/resources/imgs/guides/update_gid.png)
+![Страница просмотра гида](https://github.com/decilya/new-test-laravel-docker/blob/main/src/resources/imgs/guides/gid_view.png)
+![Страница удаления гида](https://github.com/decilya/new-test-laravel-docker/blob/main/src/resources/imgs/guides/del.png)
+
+
+
